@@ -18,15 +18,15 @@ model User {
   first_name   String?
   last_name    String?
   verification Boolean
-  clerkId      String
+  clerkId      String   @unique
   created_at   DateTime @default(now())
   Todos        Todo[]
 }
 
 model Todo {
   id        Int      @id @default(autoincrement())
-  user      User?     @relation(fields: [userId], references: [id])
-  userId    Int?    
+  user      User?    @relation(fields: [clerkId], references: [clerkId])
+  clerkId   String?
   todo      String
   completed Boolean  @default(false)
   date      DateTime @default(now())
