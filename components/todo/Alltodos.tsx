@@ -2,6 +2,8 @@ import { prisma } from "@/prisma/script";
 import SingleTodo from "./SingleTodo";
 import { currentUser } from "@clerk/nextjs/server";
 
+export const runtime = "edge";
+
 const Alltodos = async () => {
   const user = await currentUser();
   const todos =
