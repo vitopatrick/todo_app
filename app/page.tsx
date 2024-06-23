@@ -1,6 +1,8 @@
 import Alltodos from "@/components/todo/Alltodos";
 import AddToDoForm from "../components/todo-form/AddToDoForm";
 
+export const runtime = "edge";
+
 const Home = () => {
   return (
     <div className="bg-white h-screen text-black">
